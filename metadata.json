@@ -1,0 +1,6 @@
+{
+  "name": "CCTI Virtual Parenting Conference 3.0",
+  "description": "Annual Virtual Parenting Conference 3.0: Mothering and Motherhood. Discover, Heal, Restore, Revive, Inspire. Christian Children Training Institute.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
