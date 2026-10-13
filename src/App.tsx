@@ -13,7 +13,7 @@ import { ImageManagerModal } from './components/ImageManagerModal';
 import { PrayerModal } from './components/PrayerModal';
 import { FlyerModal } from './components/FlyerModal';
 import { IntegrationHubModal } from './components/IntegrationHubModal';
-import { INITIAL_SPEAKERS, CONVENER_DATA, Speaker } from './data/conferenceData';
+import { INITIAL_SPEAKERS, CONVENER_DATA, DEFAULT_IMAGES, Speaker } from './data/conferenceData';
 import { ArrowUp, Send, Sparkles, MessageCircle, Heart, Image as ImageIcon } from 'lucide-react';
 
 export default function App() {
@@ -29,9 +29,9 @@ export default function App() {
   // Dynamic image state allows the user to swap any image via the in-app Photo Manager
   const [speakers, setSpeakers] = useState<Speaker[]>(INITIAL_SPEAKERS);
   const [convenerImage, setConvenerImage] = useState(CONVENER_DATA.image);
-  const [heroImage, setHeroImage] = useState('/src/assets/images/hero_motherhood_embrace_1791819001800.jpg');
-  const [celebrationImage] = useState('/src/assets/images/mothers_appreciation_celebration_1791819013404.jpg');
-  const [flyerImage, setFlyerImage] = useState('/src/assets/images/ccti_conference_flyer_poster_1791825647313.jpg');
+  const [heroImage, setHeroImage] = useState(DEFAULT_IMAGES.hero);
+  const [celebrationImage] = useState(DEFAULT_IMAGES.celebration);
+  const [flyerImage, setFlyerImage] = useState(DEFAULT_IMAGES.flyer);
 
   // Monitor scroll for back to top button & active section highlight
   useEffect(() => {
@@ -90,8 +90,8 @@ export default function App() {
   const handleResetAllImages = () => {
     setSpeakers(INITIAL_SPEAKERS);
     setConvenerImage(CONVENER_DATA.image);
-    setHeroImage('/src/assets/images/hero_motherhood_embrace_1791819001800.jpg');
-    setFlyerImage('/src/assets/images/ccti_conference_flyer_poster_1791825647313.jpg');
+    setHeroImage(DEFAULT_IMAGES.hero);
+    setFlyerImage(DEFAULT_IMAGES.flyer);
   };
 
   const openPrayerModalWithMinister = (ministerName = '') => {

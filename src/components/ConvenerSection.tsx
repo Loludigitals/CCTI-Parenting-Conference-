@@ -41,6 +41,10 @@ export const ConvenerSection: React.FC<ConvenerSectionProps> = ({
                 className="w-full aspect-[4/4] sm:aspect-[4/4] object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 onError={(e) => {
                   const target = e.currentTarget;
+                  if (target.src.includes('/src/assets/images/')) {
+                    target.src = target.src.replace('/src/assets/images/', '/assets/images/');
+                    return;
+                  }
                   target.style.display = 'none';
                   if (target.parentElement) {
                     target.parentElement.classList.add('flex', 'items-center', 'justify-center', 'p-12', 'text-center');

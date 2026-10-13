@@ -51,6 +51,10 @@ export const SpeakersSection: React.FC<SpeakersSectionProps> = ({
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
                       const target = e.currentTarget;
+                      if (target.src.includes('/src/assets/images/')) {
+                        target.src = target.src.replace('/src/assets/images/', '/assets/images/');
+                        return;
+                      }
                       target.style.display = 'none';
                       if (target.parentElement) {
                         target.parentElement.classList.add('flex', 'items-center', 'justify-center', 'bg-gradient-to-br', 'from-amber-100', 'to-rose-100', 'text-amber-900');

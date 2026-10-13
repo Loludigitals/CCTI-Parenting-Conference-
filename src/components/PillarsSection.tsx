@@ -115,6 +115,12 @@ export const PillarsSection: React.FC<PillarsSectionProps> = ({
                     alt="Official CCTI Parenting Conference 3.0 Flyer"
                     referrerPolicy="no-referrer"
                     className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (target.src.includes('/src/assets/images/')) {
+                        target.src = target.src.replace('/src/assets/images/', '/assets/images/');
+                      }
+                    }}
                   />
                   <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors flex items-center justify-center">
                     <span className="opacity-0 group-hover:opacity-100 bg-slate-950/80 backdrop-blur-md text-amber-300 border border-amber-400/40 px-3.5 py-1.5 rounded-full text-xs font-bold transition-opacity flex items-center gap-1.5 shadow-lg">
@@ -172,6 +178,12 @@ export const PillarsSection: React.FC<PillarsSectionProps> = ({
                   alt="Mother's Appreciation and Awards Celebration"
                   referrerPolicy="no-referrer"
                   className="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src.includes('/src/assets/images/')) {
+                      target.src = target.src.replace('/src/assets/images/', '/assets/images/');
+                    }
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4">
                   <p className="text-xs text-amber-200 font-medium italic">

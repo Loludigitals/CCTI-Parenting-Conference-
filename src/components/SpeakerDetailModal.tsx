@@ -52,8 +52,11 @@ export const SpeakerDetailModal: React.FC<SpeakerDetailModalProps> = ({
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-top"
                 onError={(e) => {
-                  // Fallback styling if image fails
                   const target = e.currentTarget;
+                  if (target.src.includes('/src/assets/images/')) {
+                    target.src = target.src.replace('/src/assets/images/', '/assets/images/');
+                    return;
+                  }
                   target.style.display = 'none';
                   if (target.parentElement) {
                     target.parentElement.classList.add('flex', 'items-center', 'justify-center', 'bg-amber-100', 'text-amber-800', 'font-serif', 'font-bold');

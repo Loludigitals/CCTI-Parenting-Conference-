@@ -233,6 +233,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   alt={activeView === 'flyer' ? "CCTI Parenting Conference 3.0 Official Flyer" : "Mother with her children - CCTI Parenting Conference 3.0"}
                   referrerPolicy="no-referrer"
                   className={activeView === 'flyer' ? "w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500" : "w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src.includes('/src/assets/images/')) {
+                      target.src = target.src.replace('/src/assets/images/', '/assets/images/');
+                    }
+                  }}
                 />
               </div>
 

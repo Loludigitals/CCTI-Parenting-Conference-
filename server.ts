@@ -117,10 +117,8 @@ app.get('/api/prayers', (req, res) => {
   });
 });
 
-// Always serve static assets and images in both dev and production
+// Serve public static assets
 app.use('/assets/images', express.static(path.join(__dirname, 'public/assets/images')));
-app.use('/src/assets/images', express.static(path.join(__dirname, 'src/assets/images')));
-app.use('/src/assets/images', express.static(path.join(__dirname, 'public/assets/images')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Configure Vite middleware in development
@@ -147,6 +145,7 @@ async function startServer() {
       }
     });
   } else {
+    app.use('/src/assets/images', express.static(path.join(__dirname, 'public/assets/images')));
     app.use(express.static(path.join(__dirname, 'dist')));
     app.get('*', (_req, res) => {
       res.sendFile(path.join(__dirname, 'dist', 'index.html'));

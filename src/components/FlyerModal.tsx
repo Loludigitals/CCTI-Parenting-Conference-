@@ -12,6 +12,8 @@ export const FlyerModal: React.FC<FlyerModalProps> = ({
   onClose,
   flyerImage,
 }) => {
+  const [isCopied, setIsCopied] = React.useState(false);
+
   if (!isOpen) return null;
 
   const handleDownload = () => {
@@ -29,7 +31,8 @@ export const FlyerModal: React.FC<FlyerModalProps> = ({
       navigator.share({ title: 'CCTI Conference Flyer', text, url: window.location.href }).catch(() => {});
     } else {
       navigator.clipboard.writeText(`${text} ${window.location.href}`);
-      alert('Conference flyer link copied to clipboard!');
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 3000);
     }
   };
 
@@ -85,10 +88,10 @@ export const FlyerModal: React.FC<FlyerModalProps> = ({
 
             <button
               onClick={handleShare}
-              className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-xs sm:text-sm flex items-center gap-1.5 transition-colors"
+              className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-xs sm:text-sm flex items-center gap-1.5 transition-colors relative"
             >
               <Share2 className="w-4 h-4 text-amber-400" />
-              <span>Share</span>
+              <span>{isCopied ? 'Link Copied!' : 'Share'}</span>
             </button>
           </div>
 

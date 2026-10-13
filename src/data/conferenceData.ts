@@ -1,3 +1,27 @@
+import convenerImage from '../assets/images/convener_mary_omotosho_1791818990667.jpg';
+import heroImage from '../assets/images/hero_motherhood_embrace_1791819001800.jpg';
+import celebrationImage from '../assets/images/mothers_appreciation_celebration_1791819013404.jpg';
+import flyerImage from '../assets/images/ccti_conference_flyer_poster_1791825647313.jpg';
+import euchariaImage from '../assets/images/regenerated_image_1791824563168.png';
+import leyemsoImage from '../assets/images/regenerated_image_1791824553746.jpg';
+import blessingImage from '../assets/images/regenerated_image_1791826077835.png';
+import dedayoImage from '../assets/images/regenerated_image_1791824555283.jpg';
+import odeleyeImage from '../assets/images/regenerated_image_1791824557525.png';
+import davidImage from '../assets/images/regenerated_image_1791826947898.png';
+
+export const DEFAULT_IMAGES = {
+  hero: heroImage,
+  celebration: celebrationImage,
+  flyer: flyerImage,
+  convener: convenerImage,
+  eucharia: euchariaImage,
+  leyemso: leyemsoImage,
+  blessing: blessingImage,
+  dedayo: dedayoImage,
+  odeleye: odeleyeImage,
+  david: davidImage,
+};
+
 // Conference Data for CCTI Annual Virtual Parenting Conference 3.0
 
 export interface Speaker {
@@ -34,7 +58,7 @@ export const CONVENER_DATA = {
   name: 'Mary Omotosho',
   title: 'President & Founder, Christian Children Training Institute (CCTI)',
   roles: ['Minister', 'Educator', 'Author', 'Music Minister', 'Family Life Counselor'],
-  image: '/src/assets/images/convener_mary_omotosho_1791818990667.jpg',
+  image: convenerImage,
   quote: 'To raise generations of walking Bibles: purpose-driven children and teens who live by God\'s Word, influence their communities and positively impact their nations.',
   personalMessage: 'Dear mother, your story matters. Your sacrifices matter. Your growth matters. And your wellbeing matters, too. Behind many smiling mothers are untold stories of silent battles and hidden tears. For these four days, you will not be condemned—you will be heard, held, loved, and revived.',
   credentials: [
@@ -81,7 +105,7 @@ export const INITIAL_SPEAKERS: Speaker[] = [
     topic: 'Healing the Mother\'s Heart: Releasing Guilt and Walking in Divine Peace',
     sessions: ['Thu 15 Oct (Morning)', 'Fri 16 Oct (Evening)'],
     badges: ['Family Discipleship', 'Emotional Restoration'],
-    image: '/src/assets/images/regenerated_image_1791824563168.png',
+    image: euchariaImage,
   },
   {
     id: 'leyemso-ahindi',
@@ -92,7 +116,7 @@ export const INITIAL_SPEAKERS: Speaker[] = [
     topic: 'Balancing Calling, Enterprise, and the Nurturing of Godly Heirs',
     sessions: ['Fri 16 Oct (Morning)', 'Sat 17 Oct (Evening)'],
     badges: ['Kingdom Marketplace', 'Home Management'],
-    image: '/src/assets/images/regenerated_image_1791824553746.jpg',
+    image: leyemsoImage,
   },
   {
     id: 'olu-akinyanju-blessing',
@@ -103,7 +127,7 @@ export const INITIAL_SPEAKERS: Speaker[] = [
     topic: 'Building Unshakeable Foundations: Character Architecture in Early Childhood',
     sessions: ['Thu 15 Oct (Evening)', 'Sat 17 Oct (Morning)'],
     badges: ['Character Building', 'Youth Development'],
-    image: '/src/assets/images/regenerated_image_1791826077835.png',
+    image: blessingImage,
   },
   {
     id: 'dedayo-gbolagun',
@@ -114,7 +138,7 @@ export const INITIAL_SPEAKERS: Speaker[] = [
     topic: 'The Watchman Mother: Prophetic Intercession and Spiritual Covering Over Your Seed',
     sessions: ['Fri 16 Oct (Evening)', 'Sun 18 Oct (Morning)'],
     badges: ['Intercessory Prayer', 'Spiritual Warfare'],
-    image: '/src/assets/images/regenerated_image_1791824555283.jpg',
+    image: dedayoImage,
   },
   {
     id: 'oluwatoyin-odeleye',
@@ -125,7 +149,7 @@ export const INITIAL_SPEAKERS: Speaker[] = [
     topic: 'Generational Blessings: Breaking Negative Family Patterns and Reclaiming the Heritage',
     sessions: ['Sat 17 Oct (Morning)', 'Sun 18 Oct (Morning)'],
     badges: ['Biblical Exegesis', 'Family Deliverance'],
-    image: '/src/assets/images/regenerated_image_1791824557525.png',
+    image: odeleyeImage,
   },
   {
     id: 'david-olarinioye',
@@ -136,7 +160,7 @@ export const INITIAL_SPEAKERS: Speaker[] = [
     topic: 'The Total Child: Nurturing Mental Health, Physical Wellbeing, and Spiritual Vigor',
     sessions: ['Thu 15 Oct (Morning)', 'Sat 17 Oct (Evening)'],
     badges: ['Child Health', 'Mental Wellness'],
-    image: '/src/assets/images/regenerated_image_1791826947898.png',
+    image: davidImage,
   },
 ];
 
